@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_gradient"
+    android:padding="16dp">
+
+    <!-- 顶部工具栏 -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/toolbar"
+        android:layout_alignParentTop="true"
+        android:paddingBottom="8dp">
+
+        <!-- 搜索框 -->
+        <EditText
+            android:id="@+id/etSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@+id/btnAdd"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:hint="搜索日记..."
+            android:background="@drawable/edittext_background"
+            android:padding="12dp"
+            android:textColor="#FF3366"
+            android:textColorHint="#FF9EB4"/>
+
+        <!-- 添加按钮（右上角） -->
+        <ImageButton
+            android:id="@+id/btnAdd"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_add"
+            android:background="@drawable/btn_pink_circle_small"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:contentDescription="添加新日记"/>
+    </RelativeLayout>
+
+    <!-- 列表视图 -->
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
+        android:divider="#FFC8D5"
+        android:dividerHeight="1dp"
+        android:paddingTop="8dp"/>
+
+    <!-- 空列表提示 -->
+    <TextView
+        android:id="@+id/emptyView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="还没有日记，点击+号添加"
+        android:textColor="#FF9EB4"
+        android:textSize="18sp"
+        android:visibility="gone"
+        android:layout_below="@id/toolbar"/>
+
+</RelativeLayout>
